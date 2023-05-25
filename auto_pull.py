@@ -13,6 +13,7 @@ app = "live"
 stream = "benny"
 cdn = "ws"
 protocols = ["flv","m3u8"]
+secret = "0000"
 secret = "0b365b5a0b64262e62362f3e6dd5f06f"
 duration = 2
 domain = "pull-ofZhifeng032.bchxny.com"
@@ -122,6 +123,8 @@ for domain in domain_list:
     
     if os.path.exists("output.ts") and os.path.getsize("output.ts") > 0:
       print("拉流成功")
+      with open("correct_streamingURL.txt", 'a',encoding="UTF-8") as output:
+        output.write(str(domain))
     else:
       print("拉流失敗")
       os.remove('output.ts')
