@@ -11,7 +11,8 @@ import dns.resolver
 
 app = "streamer"
 stream = "benny"
-secret = "0000"
+cdn = "ws"
+protocols = ["flv","m3u8"]
 secret = "0b365b5a0b64262e62362f3e6dd5f06f"
 uip = "220.130.164.129"
 uid = "op"
