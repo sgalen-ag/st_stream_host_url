@@ -1,5 +1,4 @@
 import re
-import os
 import time
 import json
 import hashlib
@@ -8,13 +7,13 @@ import requests
 import subprocess
 import dns.resolver
 
-app = "live"
+app = "streamer"
 stream = "benny"
 cdn = "ali"
 protocol = "m3u8"
 secret = "0b365b5a0b64262e62362f3e6dd5f06f"
 duration = 2
-domain = "push-gaia.88jnb.cn"
+domain = "push-gaia.hebzcbz.com"
 atxt = "domain_name.txt"
 ffplay_path = r'C:\Users\s9308\Documents\st_stream_host_url\ffmpeg-master-latest-win64-gpl\bin\ffmpeg.exe'
 
@@ -98,6 +97,12 @@ def DNSchecker(domain):
               print("ali")
               return("ali")
           if re.search(r'gccdn', str(cdnname)):
+              print("ws")
+              return("ws")
+          if re.search(r'wscdns', str(cdnname)):
+              print("ws")
+              return("ws")
+          if re.search(r'wsdvs', str(cdnname)):
               print("ws")
               return("ws")
     except Exception as e:
